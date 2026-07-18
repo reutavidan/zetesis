@@ -5,6 +5,10 @@
   "status": "active",
   "version": "0.1.0",
   "websiteUrl": "https://api.zetesis.science",
+  "repository": {
+    "url": "https://github.com/reutavidan/zetesis",
+    "source": "github"
+  },
   "packages": [
     {
       "registryType": "pypi",
