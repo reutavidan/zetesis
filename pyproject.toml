@@ -1,0 +1,35 @@
+[project]
+name = "zetesis"
+version = "0.1.0"
+description = "MCP client for Zetesis: scientific due diligence on a claim, evaluated by a hosted engine and sealed in a verifiable attestation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Reut Avidan", email = "reutavidan@gmail.com" }]
+keywords = ["mcp", "science", "due-diligence", "evaluation", "claim-verification", "biotech", "research"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = ["mcp>=1.2.0"]
+
+[project.urls]
+Homepage = "https://api.zetesis.science"
+Signup = "https://api.zetesis.science/signup"
+
+[project.scripts]
+zetesis-client = "zetesis.client:main"
+zetesis = "zetesis.client:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/zetesis"]

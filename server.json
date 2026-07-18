@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.reutavidan/zetesis",
+  "description": "Scientific due diligence on a claim. Evaluate how rigorously a scientific, biomedical, clinical, or AI claim was derived, and how well public literature, clinical trials, and filings support it, with a signed, independently re-checkable attestation. Free screen; gated full dossier.",
+  "status": "active",
+  "version": "0.1.0",
+  "websiteUrl": "https://api.zetesis.science",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "zetesis",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "runtimeHint": "uvx",
+      "environmentVariables": [
+        {
+          "name": "ZETESIS_TOKEN",
+          "description": "Zetesis access token. Only needed for a full attested dossier; the free screen needs none. Request access at https://api.zetesis.science/request-access.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
