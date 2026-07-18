@@ -60,3 +60,6 @@ depth, counts) is kept.
 - `ZETESIS_API` — override the API base (default `https://api.zetesis.science`)
 
 MIT licensed. The hosted engine is a separate service.
+
+---
+mcp-name: io.github.reutavidan/zetesis

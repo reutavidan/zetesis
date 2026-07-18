@@ -3,7 +3,7 @@
   "name": "io.github.reutavidan/zetesis",
   "description": "Scientific due diligence on a claim, sealed in a verifiable attestation. Free screen, gated dossier.",
   "status": "active",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "websiteUrl": "https://api.zetesis.science",
   "repository": {
     "url": "https://github.com/reutavidan/zetesis",
@@ -14,7 +14,7 @@
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "zetesis",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "transport": { "type": "stdio" },
       "runtimeHint": "uvx",
       "environmentVariables": [
