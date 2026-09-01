@@ -1,5 +1,7 @@
 # Zetesis
 
+[![smithery badge](https://smithery.ai/badge/reutavidan/zetesis)](https://smithery.ai/servers/reutavidan/zetesis)
+
 Scientific due diligence on a claim, from inside Claude, Copilot, or any MCP host.
 
 Zetesis takes a high-dimensional scientific or technical claim and grades it
