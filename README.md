@@ -1,6 +1,6 @@
 # Zetesis
 
-[![smithery badge](https://smithery.ai/badge/reutavidan/zetesis)](https://smithery.ai/servers/reutavidan/zetesis)
+[Available on Smithery](https://smithery.ai/servers/reutavidan/zetesis)
 
 Scientific due diligence on a claim, from inside Claude, Copilot, or any MCP host.
 
