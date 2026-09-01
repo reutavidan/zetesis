@@ -1,10 +1,10 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.reutavidan/zetesis",
-  "description": "Scientific due diligence on a claim, sealed in a verifiable attestation. Free screen, gated dossier.",
+  "description": "Scientific due diligence on a claim: reviewer questions, failure patterns, dated evidence.",
   "status": "active",
-  "version": "0.1.1",
-  "websiteUrl": "https://api.zetesis.science",
+  "version": "0.2.0",
+  "websiteUrl": "https://zetesis.science",
   "repository": {
     "url": "https://github.com/reutavidan/zetesis",
     "source": "github"
@@ -15,7 +15,9 @@
       "registryBaseUrl": "https://pypi.org",
       "identifier": "zetesis",
       "version": "0.1.1",
-      "transport": { "type": "stdio" },
+      "transport": {
+        "type": "stdio"
+      },
       "runtimeHint": "uvx",
       "environmentVariables": [
         {
@@ -25,6 +27,13 @@
           "isSecret": true
         }
       ]
+    }
+  ],
+  "title": "Zetesis Scientific Due Diligence",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.zetesis.science/mcp"
     }
   ]
 }
