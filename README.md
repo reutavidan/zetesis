@@ -14,6 +14,18 @@ It can also evaluate a claim **as it stood in an earlier year**, restricting evi
 existed by then, so a claim is judged on what was knowable at the time rather than on how it
 turned out.
 
+## Chat in the terminal
+
+```bash
+uv tool install zetesis     # or: pipx install zetesis
+zetesis
+```
+
+`zetesis` opens a chat in the terminal with the hosted Zetesis agent. Paste a claim, or drop
+in a PDF, DOCX or PPTX path, and watch it scope the claim, search the dated record and grade
+each dimension. Follow-up questions use the same evidence. `/help` lists the commands
+(`/attach`, `/sources`, `/new`, `/web`). No account or key is needed.
+
 ## Connect it
 
 The hosted server is at `https://api.zetesis.science/mcp`, over Streamable HTTP.
@@ -116,6 +128,9 @@ remains for existing stdio setups:
 ```bash
 claude mcp add zetesis --env ZETESIS_TOKEN=zk_... -- uvx --from zetesis zetesis-client
 ```
+
+Run from a terminal, `zetesis` opens the chat above. Launched by an MCP host over stdio, it
+runs this client, so `zetesis` and `zetesis-client` both work in MCP configs.
 
 Tokens: <https://api.zetesis.science/request-access>
 
