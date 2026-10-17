@@ -29,7 +29,28 @@ from rich.text import Text
 from . import __version__
 
 API = os.environ.get("ZETESIS_API", "https://api.zetesis.science").rstrip("/")
-TOKEN = os.environ.get("ZETESIS_TOKEN", "")
+_TOKEN_FILE = os.path.join(os.path.expanduser("~"), ".config", "zetesis", "token")
+
+
+def _saved_token():
+    try:
+        with open(_TOKEN_FILE) as f:
+            return f.read().strip()
+    except OSError:
+        return ""
+
+
+def _save_token(tok):
+    os.makedirs(os.path.dirname(_TOKEN_FILE), exist_ok=True)
+    if tok:
+        with open(_TOKEN_FILE, "w") as f:
+            f.write(tok + "\n")
+        os.chmod(_TOKEN_FILE, 0o600)
+    elif os.path.exists(_TOKEN_FILE):
+        os.remove(_TOKEN_FILE)
+
+
+TOKEN = os.environ.get("ZETESIS_TOKEN", "") or _saved_token()
 MAX_DOC = 120000
 
 TEAL = "#3fa7b4"
@@ -44,6 +65,8 @@ HELP = """\
   [bold]/sources[/]         list every source retrieved in this conversation, with links
   [bold]/new[/]             start a new conversation
   [bold]/web[/]             open the Zetesis web chat in your browser
+  [bold]/plans[/]           see plans and subscribe
+  [bold]/token[/] <token>   sign in with your access token (saved on this computer)
   [bold]/help[/]            show this list
   [bold]/exit[/]            leave (or Ctrl-D)
 
@@ -63,7 +86,7 @@ def welcome():
     body.append("/help for commands · /exit to leave", style="dim")
     console.print(Panel(body, border_style=TEAL, padding=(1, 2), expand=False))
     if TOKEN:
-        console.print("  [dim]Signed in with ZETESIS_TOKEN.[/]")
+        console.print("  [dim]Signed in with your access token.[/]")
     console.print()
 
 
@@ -330,6 +353,15 @@ def main():
         elif cmd == "/web":
             webbrowser.open(f"{API}/app")
             console.print(f"[dim]Opened {API}/app[/]\n")
+        elif cmd == "/plans":
+            webbrowser.open(f"{API}/plans")
+            console.print(f"[dim]Opened {API}/plans[/]\n")
+        elif cmd == "/token":
+            global TOKEN
+            TOKEN = rest.strip()
+            _save_token(TOKEN)
+            console.print("[dim]" + ("Signed in. The token is saved in ~/.config/zetesis/token."
+                                     if TOKEN else "Signed out.") + "[/]\n")
         elif cmd == "/attach":
             if not rest.strip():
                 console.print("[dim]Usage: /attach <path>[/]\n")
