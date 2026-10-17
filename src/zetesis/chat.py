@@ -51,9 +51,9 @@ A file path on its own attaches that file and asks for an assessment of it.
 Add a year to judge a claim as it stood then: "as of 2021: ..."."""
 
 EXAMPLES = [
-    "Assess as of 2021: faricimab allows dosing every 16 weeks in nAMD, non-inferior to aflibercept every 8 weeks.",
-    "Is PRMT5 a validated synthetic-lethal target in MTAP-deleted cancers?",
-    "/attach ~/Downloads/deck.pdf",
+    "Is PRMT5 a validated target in MTAP-deleted cancers?",
+    "As of 2021, did the evidence support faricimab every 16 weeks in nAMD?",
+    "Drag a deck or a paper into this window",
 ]
 
 
@@ -64,10 +64,10 @@ def welcome():
     body.append(f"  v{__version__}\n", style="dim")
     body.append("Translating complex science into capital decisions.\n\n",
                 style="dim")
-    body.append("Paste a claim or an abstract, or attach a deck, paper or protocol. Zetesis\n"
-                "states the hypothesis, searches the dated public record (literature, trial\n"
-                "registries, FDA labels, grants, filings) and grades each dimension, citing\n"
-                "every source by its public identifier.\n\n")
+    body.append("Drop in a deck, a paper or a protocol, or ask me anything that would help\n"
+                "you assess and review the science behind a decision. I'll find the central\n"
+                "hypothesis, search the dated public record and show you what holds up,\n"
+                "with every source cited.\n\n")
     body.append("Try\n", style=f"bold {BRONZE}")
     for e in EXAMPLES:
         body.append("  › ", style=TEAL)
