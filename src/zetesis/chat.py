@@ -50,13 +50,6 @@ HELP = """\
 A file path on its own attaches that file and asks for an assessment of it.
 Add a year to judge a claim as it stood then: "as of 2021: ..."."""
 
-EXAMPLES = [
-    "Is PRMT5 a validated target in MTAP-deleted cancers?",
-    "As of 2021, did the evidence support faricimab every 16 weeks in nAMD?",
-    "Drag a deck or a paper into this window",
-]
-
-
 def welcome():
     body = Text()
     body.append("ζ ", style=f"bold italic {TEAL}")
@@ -65,13 +58,9 @@ def welcome():
     body.append("Translating complex science into capital decisions.\n\n",
                 style="dim")
     body.append("What science would you like a closer look at?\n"
-                "Bring a question, or drag in a deck, paper or protocol.\n"
+                "Bring a question, or drag in a deck or paper.\n"
                 "Let's see what the evidence supports.\n\n")
-    body.append("Try\n", style=f"bold {BRONZE}")
-    for e in EXAMPLES:
-        body.append("  › ", style=TEAL)
-        body.append(e + "\n")
-    body.append("\n/help for commands · /exit to leave", style="dim")
+    body.append("/help for commands · /exit to leave", style="dim")
     console.print(Panel(body, border_style=TEAL, padding=(1, 2), expand=False))
     if TOKEN:
         console.print("  [dim]Signed in with ZETESIS_TOKEN.[/]")
