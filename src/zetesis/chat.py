@@ -64,10 +64,9 @@ def welcome():
     body.append(f"  v{__version__}\n", style="dim")
     body.append("Translating complex science into capital decisions.\n\n",
                 style="dim")
-    body.append("Drop in a deck, a paper or a protocol, or ask me anything that would help\n"
-                "you assess and review the science behind a decision. I'll find the central\n"
-                "hypothesis, search the dated public record and show you what holds up,\n"
-                "with every source cited.\n\n")
+    body.append("What science would you like a closer look at?\n"
+                "Bring a question, or drag in a deck, paper or protocol.\n"
+                "Let's see what the evidence supports.\n\n")
     body.append("Try\n", style=f"bold {BRONZE}")
     for e in EXAMPLES:
         body.append("  › ", style=TEAL)
