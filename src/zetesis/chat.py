@@ -62,7 +62,7 @@ def welcome():
     body.append("ζ ", style=f"bold italic {TEAL}")
     body.append("Welcome to Zetesis", style="bold")
     body.append(f"  v{__version__}\n", style="dim")
-    body.append("Scientific due diligence on the central hypothesis behind a decision.\n\n",
+    body.append("Translating complex science into capital decisions.\n\n",
                 style="dim")
     body.append("Paste a claim or an abstract, or attach a deck, paper or protocol. Zetesis\n"
                 "states the hypothesis, searches the dated public record (literature, trial\n"
