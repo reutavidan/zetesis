@@ -14,6 +14,19 @@ It can also evaluate a claim **as it stood in an earlier year**, restricting evi
 existed by then, so a claim is judged on what was knowable at the time rather than on how it
 turned out.
 
+## Install
+
+No account, key or token is required for any of these.
+
+| Where | Command |
+|---|---|
+| **Terminal chat** | `uv tool install zetesis`, then run `zetesis` (or `pipx install zetesis`) |
+| **Claude Code** | `claude mcp add --transport http zetesis https://api.zetesis.science/mcp` |
+| **Claude Code plugin** (tools plus skills) | `/plugin marketplace add reutavidan/zetesis-plugin`, then `/plugin install zetesis@zetesis` |
+| **Codex** | `codex mcp add zetesis --url https://api.zetesis.science/mcp` |
+| **Gemini CLI** | `gemini mcp add --transport http zetesis https://api.zetesis.science/mcp` |
+| **Browser** | <https://api.zetesis.science/app> |
+
 ## Chat in the terminal
 
 ```bash
@@ -21,9 +34,9 @@ uv tool install zetesis     # or: pipx install zetesis
 zetesis
 ```
 
-`zetesis` opens a chat in the terminal with the hosted Zetesis agent. Paste a claim, or drop
-in a PDF, DOCX or PPTX path, and watch it scope the claim, search the dated record and grade
-each dimension. Follow-up questions use the same evidence. `/help` lists the commands
+`zetesis` opens a chat in the terminal with the hosted Zetesis agent. Ask a question, or drag
+a deck or paper (PDF, DOCX or PPTX) into the window, and watch it scope the claim, search the
+dated record and grade each dimension. Follow-up questions use the same evidence. `/help` lists the commands
 (`/attach`, `/sources`, `/new`, `/web`). No account or key is needed.
 
 ## Connect it
@@ -57,6 +70,7 @@ Any other MCP client:
 | **Microsoft Copilot Studio** | Tools, then Add a tool, then Model Context Protocol. Server URL, auth **None**. |
 | **ChatGPT** | Settings, then Connectors, then Developer mode. Add the URL. |
 | **Gemini CLI** | `gemini mcp add --transport http zetesis https://api.zetesis.science/mcp` |
+| **Codex** | `codex mcp add zetesis --url https://api.zetesis.science/mcp` |
 
 For Gemini's `settings.json`, use `httpUrl` rather than `url`; the latter is SSE and will not
 connect. Full setup notes: <https://api.zetesis.science/docs>
