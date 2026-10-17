@@ -55,7 +55,7 @@ MAX_DOC = 120000
 
 TEAL = "#3fa7b4"
 BRONZE = "#c9974f"
-NAMES = {"scope_claim": "Scope claim", "search_evidence": "Search evidence"}
+NAMES = {"scope_claim": "Scope claim", "search_evidence": "Search evidence", "run_zetesis_screen": "Zetesis screen"}
 
 console = Console(highlight=False)
 
